@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/Css/login.css">
+  <title>Login Page</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="/loginValidation" method="post">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Login</button>
+      </div>
+      <div class="form-group">
+        <button type="button" class="signup-button" onclick="Signup()">Signup</button>
+      </div>
+      <div id="error-container" class="error-message"></div>
+    </form>
+  </div>
+
+
+  <script>    
+    function Signup() {
+      window.location.href = "/signup";
+    }
+  </script>
+</body>
+</html>

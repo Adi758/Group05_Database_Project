@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/Css/signup.css">
+  <title>Sign Up</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <form id="signup-form" action="/register" method="post">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="firstName" required>
+
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastName" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <!-- <label for="usertype">User Type</label>
+      <input type="text" name="userType" id="userType" required> -->
+
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Log In</a></p>
+  </div>
+<script>
+  
+</script>
+
+</body>
+</html>

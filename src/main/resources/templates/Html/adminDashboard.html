@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="/Css/adminDashboard.css"/>
+  <title>Database Dashboard</title>
+  
+</head>
+<body onload="ListOfFiles()">
+<header>
+  <div class="logo">
+    <img src="../images/Logo.png" alt="">
+  </div>
+  <div class="topnav" id="myTopnav">
+    <a href="home.html">Home</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="account-options">
+    <a href="#" onclick="toggleAccountOptions()">
+      <img src="/images/account-icon.png" alt="Account Icon" width="40" height="30">
+    </a>
+    <ul id="accountOptions">
+      <li><a href="profile.html">My Profile</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li> <!-- Updated logout link -->
+    </ul>
+  </div>
+</header>
+<div class="search-container">
+  <div class="sidebar">
+    <a href="#">Text Files</a>
+    <a href="#">PDF</a>
+    <a href="#">Images</a>
+    <a href="#" onclick="toggleSortByOptions()" class="toggle-symbol">Sort By</a>
+    <div class="sort-by-options" id="sortByOptions">
+      <a href="#">Decades</a>
+      <a href="#">Years</a>
+    </div>
+  </div>
+
+  <div class="searching">
+    <h1>Welcome to History of Black People</h1>
+    <h4>A place where you can find vast variety of Info Regarding Blacks</h4>
+    <div class="search-bar">
+      <input type="text" placeholder="  Search..." id="search"/>
+      <a onclick="startSearch()"><img src="../images/Searchicon.png" alt=""></a>
+      <!-- Your database dashboard content goes here -->
+    </div>
+    <div class="display-content">
+      
+      <!-- <ul th:each="item: ${items}" class='grid-container'>
+        <li class='grid-item'>
+          <a href="" th:href = "${item.getFilePath()}" th:text="${item.getItemName()}" target='_blank'></a>
+          <p th:text="${item.getItemCaption()}"></p>
+        </li>
+      </ul> -->
+    </div>
+  </div>
+  <div class="update">
+    <form action="/uploaded" method="post" enctype="multipart/form-data">
+      <label for="file">File</label>
+      <input id="file" name="itemName" type="file"/>
+      <label for="itemCaption">Description:</label>
+      <input type="text" name="itemCaption" required>
+      <button>Upload</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<script>
+  
+// Including ListOfFiles.html into display-contents div
+  // const contents = document.querySelector('.display-content')
+  // fetch("../Html/ListOfFiles.html")
+  // .then(res=>res.text())
+  // .then(data=>{
+  //   contents.innerHTML = data
+  // })
+// 
+  function ListOfFiles(){
+    
+  }
+
+  function startSearch(){
+    
+  }
+
+  function toggleAccountOptions() {
+    var accountOptions = document.getElementById("accountOptions");
+    if (accountOptions.style.display === "none") {
+      accountOptions.style.display = "block";
+    } else {
+      accountOptions.style.display = "none";
+    }
+  }
+
+  function toggleSortByOptions() {
+    var sortByOptions = document.getElementById("sortByOptions");
+    sortByOptions.classList.toggle("active");
+  }
+  function logout() {
+    // Perform the logout functionality here.
+    // You can clear session data, show a message, and redirect to the login page.
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+  }
+</script>
+</body>
+</html>
